@@ -10,7 +10,7 @@ nav {
 }
 
 /* link styles */
-.navbar-brand {
+a {
     text-decoration: none;
     color: purple;
   }
