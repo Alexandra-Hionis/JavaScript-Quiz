@@ -1,0 +1,16 @@
+body {
+    width: 100%;
+    margin: 0 auto; 
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* link styles */
+.navbar-brand {
+    text-decoration: none;
+    color: purple;
+  }
