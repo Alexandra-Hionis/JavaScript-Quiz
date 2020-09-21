@@ -9,34 +9,58 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+    <!-- Font Syles-->
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@700&display=swap" rel="stylesheet">
+
     <!-- Styles CSS -->
     <link rel="stylesheet" href="styles.css">
 
     <title>JavaScript Quiz</title>
   </head>
   <body>
-    <!-- start of header section -->
+    <!-- Start of header section -->
     <header>
         <nav>
             <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="highscores.html">View Highscores</a>
-            </li>
-              <span id="timer" class="navbar-text">
-                Navbar text with an inline element
-              </span>
-            </ul>
+                <li class="nav-item">
+                  <a class="nav-link active" href="highscores.html">View High Scores</a>
+                </li>
+                <li class="nav-item">
+                  <p class="nav-link count" id="timer"></p>
+                </li>
+              </ul>
         </nav>
-      </header>
-      <!-- end of header section -->
+    </header>
+      <!-- End of header section -->
+
+    <!-- Start of main section-->  
+    <main>
+        <div id="instructions" class="card text-center">
+            <div class="card-body">
+              <h1 class="card-title">Coding Quiz: Do you think you know JavaScript?</h1>
+              <p class="card-text">This is a timed quiz. For every wrong question answered, you won't receive any points and 10 seconds will be subtracted from the clock.</p>
+              <p class="card-text">When the game has ended, make sure you enter you initials. See if you can get the highest score!</p>
+              <p>You have 1 minute and 15 seconds</p>
+              <button type="button" id="start" class="btn btn-info">Start Quiz</button>
+            </div>
+          </div>
+        
+    <!-- Start of quiz section -->
+        <div id="quiz"></div>
+
+
+
+    
+
+    <div id="start"></div>
+
+    <div id="results"></div>
+
+    <!-- End of quiz section -->
+    <!-- End of main section-->    
+    </main>  
 
     <!-- JavaScript -->
-    <script src="script.js">
-
-
-
-
-
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
