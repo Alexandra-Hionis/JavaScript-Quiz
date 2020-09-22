@@ -1,12 +1,19 @@
 const startButton =  document.getElementById("start-button")
-const questionContainerElement = document.getElementById('question-container')
+const questionContainerElement = document.getElementById('question-card')
+document.getElementById("question-card").style.display = "none";
+
 
 startButton.addEventListener('click', startGame)
 
 function startGame() {
-    console.log("stared")
-    startButton.classList.add('hide')
-    questionContainerElement.classList.remove('hide')
+    console.log("started")
+    
+    
+    const instructionsContainerElement = document.getElementById('instructions-card')
+    document.getElementById("instructions-card").style.display = "none";
+    document.getElementById("question-card").style.display = "block";
+    
+    
 
     
 
