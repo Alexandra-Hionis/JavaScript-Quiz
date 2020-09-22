@@ -14,29 +14,30 @@ function startGame() {
     document.getElementById("question-card").style.display = "block";
     
     
+}
 
-    
+var timeEl = document.querySelector(".count");
+var mainEl = document.getElementById("timer");
 
-    function setTime() {
-        var timeEl = document.querySelector(".count");
-        var mainEl = document.getElementById("timer");
+document.getElementById("start-button").addEventListener("click", function(){
+    var secondsLeft = 75;
 
-        var secondsLeft = 75; 
-        var timerInterval = setInterval(function() {
-            secondsLeft--;
-            timeEl.textContent = 'Timer: ' + secondsLeft;
 
-            if(secondsLeft === 0) {
-            clearInterval(timerInterval);
-            sendMessage();
-            }
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = "Timer: " + secondsLeft;
 
-        }, 1000);
-
-        setTime();
+    if(secondsLeft === 0) {
+      clearInterval(timerInterval);
+      sendMessage();
     }
 
-}
+  }, 1000);
+});
+
+
+
+
 
 
 function nextQuestion() {
@@ -112,63 +113,3 @@ const myQuestions = [
     correctAnswer: 2
     }
    ];
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//   const quizContainer = document.getElementById('quiz');
-//   const resultsContainer = document.getElementById('results');
-
-//   function makeQuiz(){
-       
-//     document.getElementById("start-button").click(); 
-//       
-//WHEN START BUTTON IS PRESSED, FIRST QUESTION APPEARS AND TIMER STARTS
-
-// 
-
-// function sendMessage() {
-//   timeEl.textContent = " ";
-
-//   var imgEl = document.createElement("img");
-
-//   imgEl.setAttribute("src", "images/image_1.jpg");
-//   mainEl.appendChild(imgEl);
-
-// }
-
-// setTime();
