@@ -16,24 +16,25 @@ function startGame() {
     
 }
 
-var timeEl = document.querySelector(".count");
-var mainEl = document.getElementById("timer");
+    var timeEl = document.querySelector(".count");
+    var mainEl = document.getElementById("timer");
 
-document.getElementById("start-button").addEventListener("click", function(){
-    var secondsLeft = 75;
+    document.getElementById("start-button").addEventListener("click", function(){
+        var secondsLeft = 75;
+        timeEl.textContent = "Timer: " + secondsLeft;
 
 
-  var timerInterval = setInterval(function() {
-    secondsLeft--;
-    timeEl.textContent = "Timer: " + secondsLeft;
+        var timerInterval = setInterval(function() {
+        secondsLeft--;
+        timeEl.textContent = "Timer: " + secondsLeft;
 
-    if(secondsLeft === 0) {
-      clearInterval(timerInterval);
-      sendMessage();
-    }
+        if(secondsLeft === 0) {
+        clearInterval(timerInterval);
+        sendMessage();
+        }
 
-  }, 1000);
-});
+        }, 1000);
+    });
 
 
 
@@ -53,7 +54,7 @@ function answerChoice() {
 const myQuestions = [
     {
     question: "How can you add a comment in a JavaScript?",
-    answerChoices: ["\"This is a comment", "//This is a comment", "\\This is a comment", "<!--This is a coment>"],
+    answerChoices: ["\"This is a comment", "//This is a comment", "\\This is a comment", "<!--This is a comment>"],
     correctAnswer: 1
     },
 
