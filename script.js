@@ -1,25 +1,47 @@
-const startButton =  document.getElementById("start-button")
-const questionContainerElement = document.getElementById('question-card')
+// Select all elements
+const startButton =  document.getElementById("start-button");
+const questionContainerElement = document.getElementById('question-card');
+const scoreContainerElement = document.getElementById("score-card");
+const instructionsContainerElement = document.getElementById('instructions-card');
+//const question = document.getElementById("question");
+const choice1 = document.getElementById("choice-1");
+const choice2 = document.getElementById("choice-2");
+const choice3 = document.getElementById("choice-3");
+const choice4 = document.getElementById("choice-4");
+
+// Hide questions on instuction page
 document.getElementById("question-card").style.display = "none";
 
+// Hide score section on insturction page
+document.getElementById("score-card").style.display = "none";
 
+// Click start quiz button
 startButton.addEventListener('click', startGame)
 
 function startGame() {
     console.log("started")
     
     
-    const instructionsContainerElement = document.getElementById('instructions-card')
+    // Hide instructions and button 
     document.getElementById("instructions-card").style.display = "none";
+
+    // Questions will appear
     document.getElementById("question-card").style.display = "block";
+
+   
+
+    
+    
     
     
 }
-
+    // Timer begins when button is clicked
     var timeEl = document.querySelector(".count");
     var mainEl = document.getElementById("timer");
 
     document.getElementById("start-button").addEventListener("click", function(){
+
+        //set time to 75 seconds
         var secondsLeft = 75;
         timeEl.textContent = "Timer: " + secondsLeft;
 
@@ -41,9 +63,7 @@ function startGame() {
 
 
 
-function nextQuestion() {
 
-}
 
 
 function answerChoice() {

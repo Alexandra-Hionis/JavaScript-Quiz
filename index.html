@@ -51,27 +51,33 @@
     <section>
         <div id="question-card" class="card">
             <div class="card-body">
-            <h3 id="question"></h3><br>
-            <div id="answer-buttons" class="btn-group-vertical btn-grid">
-                <button type="button" class="btn btn-info">Answer 1</button>
-                <button type="button" class="btn btn-info">Answer 2</button>
-                <button type="button" class="btn btn-info">Answer 3</button>
-                <button type="button" class="btn btn-info">Answer 4</button>
+            <h4 id="question"></h4><br>
+            <div id="choice-buttons" class="btn-group-vertical btn-grid">
+                <button type="button" class="btn btn-info" id="choice-1"></button>
+                <button type="button" class="btn btn-info" id="choice-2"></button>
+                <button type="button" class="btn btn-info" id="choice-3"></button>
+                <button type="button" class="btn btn-info" id="choice-4"></button>
+            </div>
+            <div id="answer"></div>
+        </div> 
+
+        <div id="score-card" class="card">
+            <div class="card-body">
+                <h3 id="end-quiz">Finished!</h3>
+                <p id=final-score></p>
+                <p>Enter initials: <input type="text" id="initials"></p>
+                <button type="button" id="start-button" class="btn btn-info">OK</button>
+            </div> 
         </div>
     </section>     
             
                
-            </div>
-
-
-          </div>
-
+           
 
     
 
-    <div id="start"></div>
+   
 
-    <div id="results"></div>
 
     <!-- End of quiz section -->
     <!-- End of main section-->    
