@@ -2,11 +2,11 @@
 const currentQuestion = 0; // Contain index of current question
 const score = 0; // Score starts off at 0
 
-const questionEl = document.getElementById("h4");
-const choiceOne = document.getElementById("choice-1");
-const choiceTwo = document.getElementById("choice-2");
-const choiceThree = document.getElementById("choice-3");
-const choiceFour = document.getElementById("choice-4");
+const questionEl = document.getElementById("question");
+const choiceOne = document.getElementById("choice1");
+const choiceTwo = document.getElementById("choice2");
+const choiceThree = document.getElementById("choice3");
+const choiceFour = document.getElementById("choice4");
 
 const startButton =  document.getElementById("start-button");
 const questionContainerElement = document.getElementById('questionCard');
@@ -41,6 +41,7 @@ startButton.addEventListener('click', startGame)
 
 function startGame() {
     
+    getQuestion(currentQuestion)
 
     // Hide instructions and button 
     instructionsContainerElement.style.display = "none";
@@ -186,6 +187,7 @@ function getQuestion (questionIndex) {
     // Show questions 
     questionContainerElement.style.display = "block";
 
+    
     
 
 };
