@@ -1,26 +1,32 @@
 // Select all elements
 const currentQuestion = 0; // Contain index of current question
 const score = 0; // Score starts off at 0
+const totalQuestions = quizQuestions.length;
 
 const questionEl = document.getElementById("question");
 const choiceOne = document.getElementById("choice1");
 const choiceTwo = document.getElementById("choice2");
 const choiceThree = document.getElementById("choice3");
 const choiceFour = document.getElementById("choice4");
-
+const rightWrongMsg = document.getElementById("answer-msg");
 const startButton =  document.getElementById("start-button");
+const choiceButtons =  document.getElementById("choice-buttons");
+const okButton = document.getElementById("ok-button");
 const questionContainerElement = document.getElementById('questionCard');
 const scoreContainerElement = document.getElementById("scoreCard");
 const instructionsContainerElement = document.getElementById('instructionsCard');
 const endContainerElement = document.getElementById("endCard")
 const playAgainBtn =  document.getElementById("playAgainButton");
 const clearBtn =  document.getElementById("clearButton");
-const timeEl = document.querySelector(".count");
 const mainEl = document.getElementById("timer");
 
 
 
-// Hide questions on instuction page
+// querySelector
+const timeEl = document.querySelector(".count");
+
+
+// Hide questions on instuction page 
 questionContainerElement.style.display = "none";
 
 // Hide score section on instruction page
@@ -38,10 +44,13 @@ endContainerElement.style.display = "none";
 // Click start quiz button
 startButton.addEventListener('click', startGame)
 
+// Click any of the answer buttons to move to next question ??
+choiceButton.addEventListener('click', getQuestion)
+
+
 
 function startGame() {
     
-    getQuestion(currentQuestion)
 
     // Hide instructions and button 
     instructionsContainerElement.style.display = "none";
@@ -71,7 +80,13 @@ function startGame() {
         }
 
         }, 1000);
+
+        getQuestion(currentQuestion)
+
+        setTimeout  
     });
+
+
 
 // Quiz questions are an array of objects with keys
 const quizQuestions = [
@@ -167,12 +182,7 @@ const quizQuestions = [
     }
    ];
 
-   const totalQuestions = quizQuestions.length; // Should give a total questions count
-   const currentQuestions = 0;
-
-
-// Create a function that will load the quetions and be in charge of all the actions that will need to take place when swapping in a new question
-//This will let me call that function later when I set up the “submit” button.
+   
 
 // Load question
 function getQuestion (questionIndex) {
@@ -182,28 +192,64 @@ function getQuestion (questionIndex) {
     choiceTwo.textContent = q.choice2;
     choiceThree.textContent = q.choice3;
     choiceFour.textContent = q.choice4;
-    if (currentQuestion === totalQuestions) 
 
     // Show questions 
     questionContainerElement.style.display = "block";
 
-    
-    
-
 };
 
-// When press correct button, next question pops us
+//
+function showNextQuestion () {
 
-//Load next question
-function nextQuestion () {
-    
 
+
+    var selectedChoice = document.getElementById("choice-buttons".clicked == true);
+    console.log("clicked")
+
+    const answer = selectedChoice.value; // If choice is selected take value and compare with quizQuestions array
+
+    if(questions[currentQuestions].answer == answer) { // If values are same, question is correct
+    addScore += 10; // Increase score by 10 if correct
+    console.log("correct")
+    }
+    selectedChoice.clicked = false;
+    currentQuestion++; // Incrementing current position number
+    if(currentQuestion == totalQuestions -1) {}
 }
 
+
+
+// const totalQuestionsIndex = quizQuestions.length; // Should give a total questions count
+// const currentQuestions = 0;
+
+function checkAnswer () {
+ 
+    
+
+
+    
+
+    
+}
+// When press correct button, next question pops up
+
+
+// If wrong answer, display "wrong!" for 1 second
+setTimeout(function(){ 
+    document.getElementById("answer-msg").innerHTML = 'Wrong!';
+    }, 1000);
+    console.log(setTimeout)
     
         // clear the last question
         // update the question
         // update the answers
 
+function scorePage () {
 
+    // Hide clear highscores button 
+    clearBtn.style.display = "none";
+
+    // Hide end section on instructions page
+    endContainerElement.style.display = "none";
+}
 

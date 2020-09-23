@@ -49,28 +49,28 @@
         
     <!-- Start of quiz section -->
     <section>
-        <div id="questionCard" class="card">
+        <div id="questionCard" class="card text-center">
             <div class="card-body">
-            <h4 id="question">test</h4><br>
+            <h4 id="question"></h4><br>
             <div id="choice-buttons" class="btn-group-vertical btn-grid">
-                <button type="button" class="btn btn-info" id="choice1">test</button>
+                <button type="button" class="btn btn-info" id="choice1"></button>
                 <button type="button" class="btn btn-info" id="choice2"></button>
                 <button type="button" class="btn btn-info" id="choice3"></button>
                 <button type="button" class="btn btn-info" id="choice4"></button>
             </div>
-            <div id="answer"></div>
+            <div id="answer-msg"></div>
         </div> 
 
-        <div id="scoreCard" class="card">
+        <div id="scoreCard" class="card text-center">
             <div class="card-body">
                 <h3 id="end-quiz">Finished!</h3>
                 <p id=final-score>Score: </p>
                 <p>Enter initials: <input type="text" id="initials"></p>
-                <button type="button" id="startButton" class="btn btn-info">OK</button>
+                <button type="button" id="ok-button" class="btn btn-info">OK</button>
             </div> 
         </div>
 
-        <div id="endCard" class="card">
+        <div id="endCard" class="card text-center">
             <div class="card-body">
             <button type="button" id="playAgainButton" class="btn btn-info">Play Again</button>
             <button type="button" id="clearButton" class="btn btn-info">Clear Highscores</button>
