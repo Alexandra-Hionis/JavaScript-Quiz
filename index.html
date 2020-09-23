@@ -53,10 +53,10 @@
             <div class="card-body">
             <h4 id="question"></h4><br>
             <div id="choice-buttons" class="btn-group-vertical btn-grid">
-                <button type="button" class="btn btn-info" id="choice-1"></button>
-                <button type="button" class="btn btn-info" id="choice-2"></button>
-                <button type="button" class="btn btn-info" id="choice-3"></button>
-                <button type="button" class="btn btn-info" id="choice-4"></button>
+                <button type="button" class="btn btn-info" id="choice1"></button>
+                <button type="button" class="btn btn-info" id="choice2"></button>
+                <button type="button" class="btn btn-info" id="choice3"></button>
+                <button type="button" class="btn btn-info" id="choice4"></button>
             </div>
             <div id="answer"></div>
         </div> 
@@ -64,9 +64,16 @@
         <div id="score-card" class="card">
             <div class="card-body">
                 <h3 id="end-quiz">Finished!</h3>
-                <p id=final-score></p>
+                <p id=final-score>Score: </p>
                 <p>Enter initials: <input type="text" id="initials"></p>
                 <button type="button" id="start-button" class="btn btn-info">OK</button>
+            </div> 
+        </div>
+
+        <div id="end-card" class="card">
+            <div class="card-body">
+            <button type="button" id="playagain-button" class="btn btn-info">Play Again</button>
+            <button type="button" id="clear-button" class="btn btn-info">Clear Highscores</button>
             </div> 
         </div>
     </section>     
