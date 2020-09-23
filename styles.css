@@ -25,9 +25,9 @@ a:hover {
     border: none;  
 }
 
-#question-card {
+/* #questionCard {
     margin: 0 160px 0 160px;
-}
+}  */
 
 .btn-grid {
     gap: 10px;
