@@ -1,7 +1,7 @@
 // Select all elements
 const currentQuestion = 0; // Contain index of current question
 const score = 0; // Score starts off at 0
-const totalQuestions = quizQuestions.length;
+
 
 const questionEl = document.getElementById("question");
 const choiceOne = document.getElementById("choice1");
@@ -44,8 +44,7 @@ endContainerElement.style.display = "none";
 // Click start quiz button
 startButton.addEventListener('click', startGame)
 
-// Click any of the answer buttons to move to next question ??
-choiceButton.addEventListener('click', getQuestion)
+
 
 
 
@@ -76,11 +75,11 @@ function startGame() {
 
         if(secondsLeft === 0) {
         clearInterval(timerInterval);
-        sendMessage();
         }
 
         }, 1000);
 
+       
         getQuestion(currentQuestion)
 
         setTimeout  
@@ -182,10 +181,11 @@ const quizQuestions = [
     }
    ];
 
-   
+  
 
 // Load question
 function getQuestion (questionIndex) {
+
     const q = quizQuestions[questionIndex]; // Give a question from one of the question index
     questionEl.textContent =(questionIndex + 1) +'. ' + q.question // Assign question element text content, questionIndex + 1 will give the question number
     choiceOne.textContent = q.choice1;
@@ -193,63 +193,47 @@ function getQuestion (questionIndex) {
     choiceThree.textContent = q.choice3;
     choiceFour.textContent = q.choice4;
 
-    // Show questions 
-    questionContainerElement.style.display = "block";
+   
+
 
 };
 
-//
-function showNextQuestion () {
+
+    
 
 
 
-    var selectedChoice = document.getElementById("choice-buttons".clicked == true);
-    console.log("clicked")
+ function renderQuestion () {
 
-    const answer = selectedChoice.value; // If choice is selected take value and compare with quizQuestions array
+    // Clears existing data 
+    question.innerHTML = "";
+    ulCreate.innerHTML = "";
 
-    if(questions[currentQuestions].answer == answer) { // If values are same, question is correct
-    addScore += 10; // Increase score by 10 if correct
-    console.log("correct")
-    }
-    selectedChoice.clicked = false;
-    currentQuestion++; // Incrementing current position number
-    if(currentQuestion == totalQuestions -1) {}
+    // For loops to loop through all info in array
+    for (var i = 0; i < questions.length; i++) {
+
+    // Appends question title only
+    var userQuestion = questions[questionIndex].question;
+    var userChoices = questions[questionIndex].choices;
+    question.textContent = userQuestion;
+    
+    listItem.addEventListener("click", (compare));
 }
+}    
+
+ 
 
 
 
-// const totalQuestionsIndex = quizQuestions.length; // Should give a total questions count
-// const currentQuestions = 0;
+
 
 function checkAnswer () {
- 
-    
 
-
-    
-
-    
+    if(questions[currentQuestions].answer == answer) { // If values are same, question is correct
+        addScore += 10; // Increase score by 10 if correct
+        console.log("correct")
+        }
+        selectedChoice.clicked = false;
+        currentQuestion++; // Incrementing current position number
+        if(currentQuestion == totalQuestions -1) {}
 }
-// When press correct button, next question pops up
-
-
-// If wrong answer, display "wrong!" for 1 second
-setTimeout(function(){ 
-    document.getElementById("answer-msg").innerHTML = 'Wrong!';
-    }, 1000);
-    console.log(setTimeout)
-    
-        // clear the last question
-        // update the question
-        // update the answers
-
-function scorePage () {
-
-    // Hide clear highscores button 
-    clearBtn.style.display = "none";
-
-    // Hide end section on instructions page
-    endContainerElement.style.display = "none";
-}
-
