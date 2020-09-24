@@ -209,6 +209,7 @@ function nextQuestion(){
 choiceButtons.addEventListener("click", function(){
     for (var i = 0; i < choiceButtons.children.length;i++){
         choiceButtons.children[i].addEventListener("click", function(){
+            console.log("clicked")
             getQuestion(questionIndex);
         })
     };
