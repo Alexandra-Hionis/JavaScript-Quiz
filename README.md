@@ -4,7 +4,7 @@ This is a timed code quiz with multiple-choice questions. This app will run in t
 # Instructions 
 This quiz tests your knowledge on JavaScript questions. You have 1 minute and 15 seconds to complete the quiz. If you get a wrong answer, your timer will reduce by 10 seconds. At the end you can enter your high scores and they will be saved to the local server, so anyone can compare!
 
-![start-page](assets/images/start.PNG)
+![start-page](assets/images/start.png)
 ![questions](assets/images/questions.png)
 ![highscores](assets/images/highscores.png)
 
