@@ -1,5 +1,5 @@
 // Select all elements
-const currentQuestion = 0; // Contain index of current question
+var currentQuestion = 0; // Contain index of current question
 const score = 0; // Score starts off at 0
 
 
@@ -20,7 +20,8 @@ const playAgainBtn =  document.getElementById("playAgainButton");
 const clearBtn =  document.getElementById("clearButton");
 const mainEl = document.getElementById("timer");
 
-
+const choiceButtonTwo = document.getElementsByClassName("btn2");
+console.log("button", choiceButtonTwo);
 
 // querySelector
 const timeEl = document.querySelector(".count");
@@ -205,27 +206,15 @@ function nextQuestion(){
 
 };
 
-// Add event listener so when any of the answer choice buttons are chosen, it will display the next question
-choiceButtons.addEventListener("click", function(){
-    for (var i = 0; i < choiceButtons.children.length;i++){
-        choiceButtons.children[i].addEventListener("click", function(){
-            console.log("clicked")
-            getQuestion(questionIndex);
-        })
-    };
-
-});
-
-    
-
-
-
- 
-
- 
-
-
-
+for (let index = 0; index < choiceButtonTwo.length; index++) {
+    const element = choiceButtonTwo[index];
+    element.addEventListener("click", function(){
+        console.log("this is working")
+        currentQuestion++
+        getQuestion(currentQuestion);
+    }) 
+        
+    }
 
 
 function checkAnswer () {
@@ -238,3 +227,16 @@ function checkAnswer () {
         currentQuestion++; // Incrementing current position number
         if(currentQuestion == totalQuestions -1) {}
 }
+
+
+// Event listener to move to index page
+playAgainBtn.addEventListener("click", function () {
+    window.location.replace("index.html");
+
+    // Event listener to clear scores 
+    clearBtn.addEventListener("click", function () {
+    localStorage.clear();
+    location.reload();
+});
+    
+}); 
