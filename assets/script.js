@@ -240,3 +240,8 @@ playAgainBtn.addEventListener("click", function () {
 });
     
 }); 
+
+//create function that when correct button is pressed, score gains 10 points
+//if wrong, down 10 points
+
+//At the end, user should be able to unput their initials in high score form and either click clear hiscore or play again
