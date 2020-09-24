@@ -193,10 +193,16 @@ function getQuestion (questionIndex) {
     choiceThree.textContent = q.choice3;
     choiceFour.textContent = q.choice4;
 
-   
-
-
+    console.log(choiceButtons.children)
+    for (var i = 0; i < choiceButtons.children.length;i++){
+        choiceButtons.children[i].addEventListener("click", function(){
+            console.log("clicked")
+        })
+    };
 };
+
+
+
 
 
     
