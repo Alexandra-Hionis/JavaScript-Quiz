@@ -81,6 +81,7 @@ function startGame() {
 
        
         getQuestion(currentQuestion)
+        
 
         setTimeout  
     });
@@ -193,39 +194,32 @@ function getQuestion (questionIndex) {
     choiceThree.textContent = q.choice3;
     choiceFour.textContent = q.choice4;
 
-    console.log(choiceButtons.children)
-    for (var i = 0; i < choiceButtons.children.length;i++){
-        choiceButtons.children[i].addEventListener("click", function(){
-            console.log("clicked")
-        })
-    };
+    
+
+  
+    
 };
 
 
+function nextQuestion(){
 
+};
 
+// Add event listener so when any of the answer choice buttons are chosen, it will display the next question
+choiceButtons.addEventListener("click", function(){
+    for (var i = 0; i < choiceButtons.children.length;i++){
+        choiceButtons.children[i].addEventListener("click", function(){
+            getQuestion(questionIndex);
+        })
+    };
+
+});
 
     
 
 
 
- function renderQuestion () {
-
-    // Clears existing data 
-    question.innerHTML = "";
-    ulCreate.innerHTML = "";
-
-    // For loops to loop through all info in array
-    for (var i = 0; i < questions.length; i++) {
-
-    // Appends question title only
-    var userQuestion = questions[questionIndex].question;
-    var userChoices = questions[questionIndex].choices;
-    question.textContent = userQuestion;
-    
-    listItem.addEventListener("click", (compare));
-}
-}    
+ 
 
  
 
