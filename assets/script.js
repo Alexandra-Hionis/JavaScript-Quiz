@@ -23,6 +23,7 @@ const initialsInput = document.getElementById("initialsInput");
 const initials = document.getElementById("initials");
 var timerInterval = null;
 
+
 const choiceButtonTwo = document.getElementsByClassName("btn2");
 console.log("button", choiceButtonTwo);
 
@@ -249,13 +250,15 @@ function scoreQuiz() {
 // At the end, user should be able to unput their initials in high score form and either click clear highscore or play again
 function endQuiz() {
 
-   let initialsText = initialsInput.value
-    localStorage.setItem(initialsText, secondsLeft);
-
       // Hide instructions and button 
       scoreContainerElement.style.display = "none";
       //show
       endContainerElement.style.display = "block";
+
+    let initialsText = initialsInput.value
+    localStorage.setItem(initialsText, secondsLeft);
+
+    
       
     for (var i = 0; i < localStorage.length; i++){
     let initialsText = localStorage.key(i);
@@ -266,16 +269,18 @@ function endQuiz() {
     }
 }
 
-okButton.addEventListener("click", function () {
-    endQuiz();
+    // Ok button is pressed
 
-})
+    okButton.addEventListener("click", function () {
+        endQuiz();
+
+    })
 
 
 
-// Event listener to move to index page
-playAgainBtn.addEventListener("click", function () {
-    window.location.replace("index.html");
+    // Event listener to move to index page
+    playAgainBtn.addEventListener("click", function () {
+        window.location.replace("index.html");
 
     // Event listener to clear scores 
     clearBtn.addEventListener("click", function () {
