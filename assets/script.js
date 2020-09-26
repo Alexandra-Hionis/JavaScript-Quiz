@@ -257,6 +257,7 @@ function endQuiz() {
 
     let initialsText = initialsInput.value
     localStorage.setItem(initialsText, secondsLeft);
+  
 
     
       

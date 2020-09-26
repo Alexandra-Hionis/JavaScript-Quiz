@@ -3,11 +3,22 @@
 var highScore = document.querySelector("#hsList");
 var clear = document.querySelector("#clearButton");
 var goBack = document.querySelector("#goBackButton");
-const initialsInput = document.getElementById("initialsInput");
-const initials = document.getElementById("initials");
-const score = 0; // Score starts off at 0
-var secondsLeft = 75;
-var timerInterval = null;
+
+// Retreives local stroage 
+var highScores = localStorage.getItem(`${initialsText}: ${score}`);
+highScores = JSON.parse(highScores);
+
+// array.push to add to array??
+
+
+
+// for (var i = 0; i < highScore.length; i++){
+//     let initialsText = localStorage.key(i);
+//     let score = localStorage.getItem(initialsText);
+//     let li = document.createElement("li");
+//     li.innerHTML = `${initialsText}: ${score}`;
+//     initials.appendChild(li);
+//     }
 
 // Event listener to clear scores 
 clear.addEventListener("click", function () {
@@ -15,9 +26,7 @@ clear.addEventListener("click", function () {
     location.reload();
 });
 
-// Retreives local stroage 
-var highScores = localStorage.getItem("initials", "score");
-highScores = JSON.parse(highScores);
+
 
 if (highScores !== null) {
 
@@ -29,6 +38,8 @@ if (highScores !== null) {
 goBack.addEventListener("click", function () {
     window.location.replace("index.html");
 }); 
+
+
 
 
 //For highscores
