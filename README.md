@@ -7,6 +7,7 @@ This quiz tests your knowledge on JavaScript questions. You have 1 minute and 15
 ![start-page](assets/images/start.png)
 ![questions](assets/images/questions.png)
 ![highscores](assets/images/highscores.png)
+![finished](assets/images/Finished.png)
 
 
 
