@@ -9,6 +9,7 @@ This quiz tests your knowledge on JavaScript questions. You have 1 minute and 15
 ![highscores](assets/images/highscores.png)
 
 
+
 ## User Story
 
 ```

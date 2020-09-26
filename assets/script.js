@@ -21,6 +21,7 @@ const clearBtn = document.getElementById("clearButton");
 const mainEl = document.getElementById("timer");
 const initialsInput = document.getElementById("initialsInput");
 const initials = document.getElementById("initials");
+
 var timerInterval = null;
 
 
@@ -37,10 +38,20 @@ for (let index = 0; index < choiceButtonTwo.length; index++) {
         quizQuestions[currentQuestion].userAnswer = e.target.innerHTML
         var correctAnswer = q["choice" + q.correctAnswer]
         var userAnswer = e.target.innerHTML
+        
 
         if (userAnswer !== correctAnswer) {
             secondsLeft = secondsLeft - 10
             timeEl.textContent = "Timer: " + secondsLeft;
+
+            setAnswerMessage("Wrong");
+            // setTimeout(setAnswerMessage(""), 3000);
+
+            
+
+        } else {
+            setAnswerMessage("Right");
+            // setTimeout(setAnswerMessage(""), 3000);
         }
 
         // Go to next question
@@ -247,6 +258,7 @@ function scoreQuiz() {
 }
 
 
+
 // At the end, user should be able to unput their initials in high score form and either click clear highscore or play again
 function endQuiz() {
 
@@ -255,7 +267,7 @@ function endQuiz() {
       //show
       endContainerElement.style.display = "block";
 
-    let initialsText = initialsInput.value
+    var initialsText = initialsInput.value
     localStorage.setItem(initialsText, secondsLeft);
   
 
@@ -291,7 +303,8 @@ function endQuiz() {
 
 });
 
-// WHEN all questions are answered or the timer reaches 0
-// THEN the game is over
-// WHEN the game is over
-// THEN I can save my initials and score
+function setAnswerMessage (answer) {
+    let answerMsg = document.getElementById("answer-msg");
+    answerMsg.innerText = answer;
+
+}

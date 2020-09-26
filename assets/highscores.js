@@ -5,20 +5,22 @@ var clear = document.querySelector("#clearButton");
 var goBack = document.querySelector("#goBackButton");
 
 // Retreives local stroage 
-var highScores = localStorage.getItem(`${initialsText}: ${score}`);
-highScores = JSON.parse(highScores);
+// var highScores = localStorage.getItem(`${initialsText}: ${score}`);
+// highScores = JSON.parse(highScores);
 
 // array.push to add to array??
 
 
+for (var i = 0; i < localStorage.length; i++){
+    let initialsText = localStorage.key(i);
+    let score = localStorage.getItem(initialsText);
+    let li = document.createElement("li");
+    li.innerHTML = `${initialsText}: ${score}`;
+    let initials = document.querySelector("#highScoresList");
+    initials.appendChild(li);
+    }
 
-// for (var i = 0; i < highScore.length; i++){
-//     let initialsText = localStorage.key(i);
-//     let score = localStorage.getItem(initialsText);
-//     let li = document.createElement("li");
-//     li.innerHTML = `${initialsText}: ${score}`;
-//     initials.appendChild(li);
-//     }
+
 
 // Event listener to clear scores 
 clear.addEventListener("click", function () {
@@ -28,17 +30,15 @@ clear.addEventListener("click", function () {
 
 
 
-if (highScores !== null) {
 
-
-    }
+   
 
    
 // Event listener to move to index page
 goBack.addEventListener("click", function () {
     window.location.replace("index.html");
 }); 
-
+ 
 
 
 
